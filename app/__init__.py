@@ -11,6 +11,7 @@ def home_view():
 @app.route("/test")
 def test():
     return "<p>Test is Successful</p>"
+    return "<p>This is savietha</p>"
 
 @app.route("/abc")
 def abc():
