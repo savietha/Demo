@@ -1,6 +1,8 @@
 import flask,requests,json 
 import jinja2
 from authlib.flask.client import OAuth
+from flask import Flask, redirect, url_for, render_template, request, flash
+from flask import Flask, redirect, url_for, request
 
 app = flask.Flask(__name__)
 
@@ -10,11 +12,23 @@ def home_view():
 
 @app.route("/test")
 def test():
-    return "<p>Test is Successful</p>"
-    return "<p>This is savietha</p>"
-    return "<p>This is savietha. Hello Everyone</p>"
-    return "<p>This is savietha. Hello Everyone. How are you</p>"
-    return "<p>This is savietha. Hello Everyone. How are you...</p>"
+    return render_template('login.html')
+
+@app.route('/success/<name>')
+def success(name):
+   return render_template('demo.html',name=name)
+
+@app.route('/login',methods = ['POST', 'GET'])
+def login():
+   if request.method == 'POST':
+      user = request.form['nm']
+      return redirect(url_for('success',name = user))
+   else:
+      user = request.args.get('nm')
+      return redirect(url_for('success',name = user))
+
+if __name__ == '__main__':
+   app.run(debug = True)
 
 @app.route("/abc")
 def abc():
