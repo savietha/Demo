@@ -8,6 +8,9 @@ app = flask.Flask(__name__)
 def home_view():
     return "<p>hello</p>"
 
+@app.route("/test")
+def test():
+    return "<p>Test is Successful</p>"
 
 @app.route("/abc")
 def abc():
