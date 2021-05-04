@@ -6,11 +6,9 @@ from flask import Flask, redirect, url_for, request
 
 app = flask.Flask(__name__)
 
-@app.route("/")
-def home_view():
-    return "<p>Hello This is Home Page</p>"
 
-@app.route("/test")
+
+@app.route("/")
 def test():
     return render_template('login.html')
 
