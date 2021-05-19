@@ -10,7 +10,7 @@ app = flask.Flask(__name__)
 @app.route('/')
 def new():
 
-    df1 = pd.read_excel(r'C:\Users\hp\Documents\GitHub\Demo\app\CANNA Product Item detail.xls')
+    df1 = pd.read_excel(r'CANNA Product Item detail.xls')
 
     df2 = df1.iloc[2:, :]
 
