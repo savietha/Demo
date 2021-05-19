@@ -19,8 +19,7 @@ def new():
                         'Unnamed: 2': 'Product Category',  'Unnamed: 3': 'UOM', 'Unnamed: 4': 'Type',
                         'Unnamed: 5': 'Weight by unit', 'Unnamed: 6': 'Weight by cs', 'Unnamed: 7': 'Unit per cs',
                         'Unnamed: 8': 'Pieces full pallet'}, inplace=True)
-    html1 = df2.to_html()
-
+    
 
 
     return render_template('xlsextract.html', df=df2, )
